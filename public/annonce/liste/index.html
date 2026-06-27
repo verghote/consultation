@@ -1,0 +1,57 @@
+<style>
+    .enteteAnnonce {
+        background-color: purple;  /* couleur de fond de l'en-tête */
+        color: white;              /* texte blanc */
+        text-align: center;        /* centrer le texte */
+        font-weight: bold;          /* facultatif si tu veux le texte en gras */
+        padding: 0.75rem;          /* correspond à la hauteur/espacement de Bootstrap */
+    }
+</style>
+
+<!-- Filtre par mois -->
+<div class="d-flex align-items-center mb-3 gap-2">
+    <select id="filtreMois" class="">
+        <option value="">Tous les mois</option>
+        <option value="0">Janvier</option>
+        <option value="1">Février</option>
+        <option value="2">Mars</option>
+        <option value="3">Avril</option>
+        <option value="4">Mai</option>
+        <option value="5">Juin</option>
+        <option value="6">Juillet</option>
+        <option value="7">Août</option>
+        <option value="8">Septembre</option>
+        <option value="9">Octobre</option>
+        <option value="10">Novembre</option>
+        <option value="11">Décembre</option>
+    </select>
+</div>
+
+<!-- Conteneur des cartes -->
+<div id="lesCartes"></div>
+
+<!-- Modal -->
+<div class="modal fade" id="detail" tabindex="-1"
+     role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+     data-bs-backdrop="true" data-bs-keyboard="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="epreuve">Description de l'épreuve</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="description"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Template de la carte -->
+<template id="modeleAnnonce">
+    <div class="card text-secondary" style="overflow-y:auto;">
+        <div class="card-header text-center enteteAnnonce"></div>
+        <div class="card-body corpsAnnonce" style="font-size:0.8rem; font-style:italic; text-align:center;">
+            <div class="d-flex align-items-center justify-content-evenly mb-2 boutonsAction"></div>
+            <div class="image-container"></div>
+        </div>
+    </div>
+</template>
