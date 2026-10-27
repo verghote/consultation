@@ -1,0 +1,36 @@
+<div class="page-card">
+    <header class="page-header">
+        <h1 class="page-title">
+            Les compétences d'un projet
+        </h1>
+
+        <div class="page-header-filters">
+            <div class="zone-recherche">
+                <label for="idProjet">
+                    Projet
+                </label>
+                <select id="idProjet" aria-label="Projet">
+                </select>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="page-body">
+        <div id="msg"></div>
+        <table id="leTableau" class="table table-sm table-bordered">
+            <thead>
+            <tr>
+                <th data-champ="code" data-type="text" style="width: 100px">
+                    Code
+                </th>
+
+                <th data-champ="libelle" data-type="text">
+                    Libellé
+                </th>
+            </tr>
+            </thead>
+            <tbody id="lesLignes"></tbody>
+        </table>
+    </div>
+</div>

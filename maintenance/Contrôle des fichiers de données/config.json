@@ -1,0 +1,27 @@
+{
+  "base_de_donnees": {
+    "host": "localhost",
+    "port": 3306,
+    "nom": "consultation",
+    "utilisateur": "root",
+    "mot_de_passe": ""
+  },
+  "controles": [
+    {
+      "nom": "Affiches des annonces",
+      "table": "annonce",
+      "colonne_fichier": "affiche",
+      "repertoire": "../../public/data/annonce",
+      "colonnes_affichage": ["id", "nom", "date"],
+      "extensions": ["jpg", "png"]
+    },
+    {
+      "nom": "Logos des clubs",
+      "table": "club",
+      "colonne_fichier": "fichier",
+      "repertoire": "../../public/data/club",
+      "colonnes_affichage": ["id", "nom"],
+      "extensions": ["png", "jpg", "jpeg", "webp", "avif"]
+    }
+  ]
+}

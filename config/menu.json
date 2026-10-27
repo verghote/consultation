@@ -1,0 +1,70 @@
+{
+  "brand": {
+    "label": "Consultation & recherche",
+    "href": "/",
+    "icon": "/css/logo.png"
+  },
+
+  "items": [
+    {
+      "label": "Consultation",
+      "children": [
+        {
+          "label": "Catégorie",
+          "href": "/categorie"
+        },
+        {
+          "label": "Coureur",
+          "href": "/coureur"
+        },
+        {
+          "label": "Club",
+          "href": "/club"
+        },
+        {
+          "label": "Annonce",
+          "href": "/annonce"
+        },
+        {
+          "label": "Projet",
+          "href": "/projet"
+        },
+        {
+          "label": "Les compétences d'un projet",
+          "href": "/competenceprojet"
+        }
+      ]
+    },
+
+    {
+      "label": "Rechercher",
+      "children": [
+        {
+          "label": "Un coureur sur son numéro de licence",
+          "href": "/coureur/getbylicence"
+        },
+        {
+          "label": "Un coureur sur son nom avec autocomplétion",
+          "href": "/coureur/getbyname"
+        },
+        {
+          "label": "Un coureur sur son nom avec autocomplétion (V2)",
+          "href": "/coureur/getbyname2"
+        },
+        {
+          "label": "Les coureurs dans une catégorie",
+          "href": "/coureur/getbycategorie"
+        },
+        {
+          "label": "Recherche par catégorie, sexe et club",
+          "href": "/coureur/recherchemultiple"
+        },
+
+        {
+          "label": "Des compétences par bloc et par domaine",
+          "href": "/competence"
+        }
+      ]
+    }
+  ]
+}

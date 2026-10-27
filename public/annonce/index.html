@@ -1,0 +1,41 @@
+<div class="page-card">
+    <div class="page-header">
+        <div class="page-header-top">
+            <h1 class="page-title">
+                Courses annoncées pour la saison en cours
+            </h1>
+            <div class="page-header-actions">
+                    <select id="filtreMois">
+                        <option value="0">Tous les mois</option>
+                    </select>
+            </div>
+        </div>
+        <div class="page-header-filters">
+
+        </div>
+    </div>
+    <div class="page-body">
+        <div id="lesCartes"></div>
+    </div>
+</div>
+<template id="courseTemplate">
+    <article class="course-carte">
+        <header class="course-entete">
+            <p class="course-date"></p>
+            <h2 class="course-nom"></h2>
+        </header>
+        <div class="course-corps">
+            <div class="course-image-container"></div>
+        </div>
+        <footer class="course-pied"></footer>
+    </article>
+</template>
+
+<dialog id="detailDialog">
+    <div class="dialog-entete">
+        <h3 id="epreuve">Description de l'épreuve</h3>
+        <button type="button" class="dialog-fermer" id="fermerDetail">Fermer</button>
+    </div>
+    <div class="dialog-corps" id="description"></div>
+</dialog>
+

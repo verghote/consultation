@@ -1,0 +1,51 @@
+.liste-clubs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.2rem;
+}
+
+.carte-club {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 300px;
+    max-width: 100%;
+}
+
+.enteteClub {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: .75rem;
+    background-color: #0790e4;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.corpsClub {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoClub {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+@media screen and (max-width: 660px) {
+    .liste-clubs {
+        padding: .75rem;
+    }
+
+    .carte-club {
+        flex-basis: 100%;
+    }
+}

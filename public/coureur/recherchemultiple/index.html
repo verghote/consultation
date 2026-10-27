@@ -1,0 +1,309 @@
+<link rel="stylesheet" href="/css/recherche.css">
+<link rel="stylesheet" href="/coureur/coureur.css">
+
+<style>
+    /* =========================================================
+       RECHERCHE MULTICRITÈRES
+       Styles spécifiques aux critères de recherche
+       ========================================================= */
+
+    .criteres-recherche {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        width: 100%;
+    }
+
+    .criteres-recherche .zone-recherche {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 250px;
+        margin: 0;
+    }
+
+    .select-recherche {
+        display: block;
+        width: 100%;
+        height: var(--champ-height);
+        margin: 0;
+        padding: .55rem .85rem;
+        box-sizing: border-box;
+        border: 1px solid var(--champ-border);
+        border-radius: var(--champ-radius);
+        background: var(--champ-background);
+        color: var(--text-color);
+        font-family: inherit;
+        font-size: 1rem;
+        line-height: 1.2;
+        cursor: pointer;
+        outline: none;
+        transition:
+                border-color .2s ease,
+                box-shadow .2s ease;
+    }
+
+    .select-recherche:focus {
+        border-color: var(--champ-focus);
+        box-shadow: 0 0 0 3px rgba(23, 105, 170, .20);
+    }
+
+    .critere-bouton {
+        flex: 0 0 auto;
+    }
+
+    .bouton-recherche {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: var(--champ-height);
+        margin: 0;
+        padding: 0 1.25rem;
+        box-sizing: border-box;
+        border: 1px solid var(--entete-bg-end);
+        border-radius: var(--champ-radius);
+        background: var(--entete-bg-end);
+        color: #ffffff;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1;
+        cursor: pointer;
+        transition:
+                background-color .2s ease,
+                border-color .2s ease,
+                box-shadow .2s ease;
+    }
+
+    .bouton-recherche:hover {
+        background: var(--entete-bg-start);
+        border-color: var(--entete-bg-start);
+    }
+
+    .bouton-recherche:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(23, 105, 170, .20);
+    }
+
+    .bouton-recherche:active {
+        transform: translateY(1px);
+    }
+
+    @media screen and (max-width: 900px) {
+        .criteres-recherche {
+            flex-wrap: wrap;
+        }
+
+        .criteres-recherche .zone-recherche {
+            flex: 1 1 200px;
+            max-width: none;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .criteres-recherche {
+            flex-direction: column;
+            align-items: stretch;
+            gap: .5rem;
+        }
+
+        .criteres-recherche .zone-recherche {
+            width: 100%;
+            max-width: none;
+            flex: none;
+        }
+
+        .critere-bouton {
+            width: 100%;
+        }
+
+        .bouton-recherche {
+            display: flex;
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="page-card">
+
+    <header class="page-header">
+
+        <div class="page-header-top">
+
+            <h1 class="page-title">
+                Rechercher des coureurs
+            </h1>
+
+            <div class="page-header-actions">
+
+                <p class="coureur-count">
+                    <span class="coureur-count-label">
+                        Nombre de coureurs :
+                    </span>
+                    <span
+                            id="nb"
+                            class="coureur-count-value">
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="page-header-filters">
+
+            <div class="criteres-recherche">
+
+                <div class="zone-recherche">
+
+                    <label
+                            for="sexe"
+                            class="visually-hidden">
+                        Sexe
+                    </label>
+
+                    <select
+                            id="sexe"
+                            class="select-recherche">
+
+                        <option value="*">
+                            Homme et Femme
+                        </option>
+
+                        <option value="M">
+                            Homme
+                        </option>
+
+                        <option value="F">
+                            Femme
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="zone-recherche">
+
+                    <label
+                            for="idClub"
+                            class="visually-hidden">
+                        Club
+                    </label>
+
+                    <select
+                            id="idClub"
+                            class="select-recherche">
+
+                        <option value="*">
+                            Tous les clubs
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="zone-recherche">
+
+                    <label
+                            for="idCategorie"
+                            class="visually-hidden">
+                        Catégorie
+                    </label>
+
+                    <select
+                            id="idCategorie"
+                            class="select-recherche">
+
+                        <option value="*">
+                            Toutes les catégories
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="critere-bouton">
+
+                    <button
+                            type="button"
+                            id="btnRechercher"
+                            class="bouton-recherche">
+                        Rechercher
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <div id="msg"></div>
+
+    <div class="page-body">
+
+        <div class="table-responsive-sm coureur-table-wrapper">
+
+            <table
+                    id="leTableau"
+                    class="coureur-table">
+
+                <thead>
+
+                <tr>
+
+                    <th
+                            data-champ="licence"
+                            data-type="text"
+                            style="width: 130px; text-align: center;">
+                        Licence
+                    </th>
+
+                    <th
+                            data-champ="nom"
+                            data-type="text"
+                            style="width: 350px; text-align: left;">
+                        Nom
+                    </th>
+
+                    <th
+                            data-champ="sexe"
+                            data-type="text"
+                            style="width: 80px; text-align: center;">
+                        Sexe
+                    </th>
+
+                    <th
+                            data-champ="dateNaissanceFr"
+                            data-type="date"
+                            style="width: 160px; text-align: center;">
+                        Né(e) le
+                    </th>
+
+                    <th
+                            data-champ="idCategorie"
+                            data-type="text"
+                            style="width: 100px; text-align: center;">
+                        Catégorie
+                    </th>
+
+                    <th
+                            data-champ="nomClub"
+                            data-type="text"
+                            style="width: 350px; text-align: left;">
+                        Club
+                    </th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="lesLignes"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

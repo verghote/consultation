@@ -1,0 +1,63 @@
+{
+  "database": {
+    "host": "localhost",
+    "port": 3306,
+    "name": "consultation",
+    "user": "root",
+    "password": ""
+  },
+  "tables": {
+    "annonce": [
+      "id",
+      "nom",
+      "description",
+      "date",
+      "url",
+      "affiche"
+    ],
+    "bloc": [
+      "id",
+      "libelle"
+    ],
+    "categorie": [
+      "id",
+      "nom",
+      "ageMin",
+      "ageMax"
+    ],
+    "club": [
+      "id",
+      "nom",
+      "fichier"
+    ],
+    "competence": [
+      "id",
+      "idBloc",
+      "idDomaine",
+      "idCompetence",
+      "libelle"
+    ],
+    "competenceprojet": [
+      "idProjet",
+      "idCompetence"
+    ],
+    "coureur": [
+      "licence",
+      "nom",
+      "prenom",
+      "sexe",
+      "dateNaissance",
+      "idCategorie",
+      "idClub"
+    ],
+    "domaine": [
+      "idBloc",
+      "idDomaine",
+      "libelle"
+    ],
+    "projet": [
+      "id",
+      "nom"
+    ]
+  }
+}

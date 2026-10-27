@@ -1,0 +1,44 @@
+<div class="page-card">
+    <header class="page-header">
+        <!-- Ligne titre -->
+        <div class="page-header-top">
+            <h1 class="page-title">
+                Liste des compétences par bloc et domaine
+            </h1>
+        </div>
+        <!-- Ligne filtres -->
+        <div class="page-header-filters">
+
+            <div class="page-header-filter">
+                <label for="idBloc">
+                    Bloc
+                </label>
+                <select id="idBloc" class="input-sm"> </select>
+            </div>
+            <div class="page-header-filter">
+                <label for="idDomaine">
+                    Domaine
+                </label>
+                <select id="idDomaine" class="input-sm"> </select>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-body">
+        <div class="table-responsive">
+            <table id="leTableau" class="table table-sm table-hover">
+                <thead>
+                <tr>
+                    <th data-champ="code" data-type="text" style="width: 100px">
+                        Code
+                    </th>
+                    <th data-champ="libelle" data-type="text">
+                        Libellé
+                    </th>
+                </tr>
+                </thead>
+                <tbody id="lesLignes"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

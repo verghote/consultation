@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="/css/recherche.css">
+<link rel="stylesheet" href="/coureur/coureur.css">
+
+
+<div class="page-card">
+    <header class="page-header">
+        <div class="page-header-top">
+            <h1 class="page-title">
+                Rechercher un coureur par son numéro de licence
+            </h1>
+        </div>
+        <!-- Ligne filtres / recherche -->
+
+        <div class="page-header-filters">
+            <div class="zone-recherche">
+                <label for="licence">
+                    Numéro de licence
+                </label>
+                <div class="champ-recherche">
+                    <div class="input-recherche">
+                        <input
+                                type="text"
+                                id="licence"
+                                placeholder="Saisir le n° licence"
+                                pattern="[0-9]{6,7}"
+                                maxlength="7"
+                                minlength="6">
+                        <span class="icone-recherche" aria-hidden="true">⌕</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-body">
+
+        <section class="bloc-info">
+            <h2>👤 Identité</h2>
+            <div class="champ">
+                <span>Nom</span>
+                <output id="nom" class="champ-sortie"></output>
+            </div>
+            <div class="champ">
+                <span>Prénom</span>
+                <output id="prenom" class="champ-sortie"></output>
+            </div>
+            <div class="champ">
+                <span>Sexe</span>
+                <output id="sexe" class="champ-sortie"></output>
+            </div>
+            <div class="champ">
+                <span>Né(e) le</span>
+                <output id="dateNaissance" class="champ-sortie"></output>
+            </div>
+        </section>
+
+        <section class="bloc-info">
+            <h2>🏆 Informations sportives</h2>
+            <div class="champ">
+                <span>Âge</span>
+                <output id="age" class="champ-sortie"></output>
+            </div>
+
+            <div class="champ">
+                <span>Catégorie</span>
+                <output id="idCategorie" class="champ-sortie"></output>
+            </div>
+
+            <div class="champ">
+                <span>Club</span>
+                <output id="nomClub" class="champ-sortie"></output>
+            </div>
+        </section>
+    </div>
+</div>
